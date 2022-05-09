@@ -1,8 +1,8 @@
 #MERN-AMAZON
  
- #Lession
- 1.introduction
- 2.install tools
- 3.create react app
- 4.Create git repository
- 
+ #Lessions
+
+ 1. Introduction
+ 2. Install tools
+ 3. Create react app
+ 4. Create git repository
