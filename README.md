@@ -14,3 +14,8 @@
  3. Render product
  4. Style product
  
+ #Add routing
+ 1. npm i create-react-app
+ 2. Create route for home screen
+ 3. Create Router for product screen
+ 
