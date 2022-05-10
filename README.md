@@ -23,4 +23,12 @@
  1.Install nodejs
  2.install express  and nodemon
  3.Run the project in 5000 port
+
+ #Fetch product from Backend
+  
+ 1. Set proxy in frontend package.json 
+ 2. npm install axios
+ 3. useState hooks
+ 4. useEffect hook
+ 5. useReducer hook
  
