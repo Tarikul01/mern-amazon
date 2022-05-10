@@ -19,7 +19,7 @@ const reducer = (state, action) => {
 
 const HomeScreen = () => {
 	// const [product, setProduct] = useState([]);
-	const [{ loading, error, products }, dispatch] = useReducer(
+	const [{ loading,  products }, dispatch] = useReducer(
 		logger(reducer),
 		{
 			products: [],
