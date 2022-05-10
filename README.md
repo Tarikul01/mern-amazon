@@ -39,9 +39,15 @@
  3. Get state from useReducer
 
  #Add bootstrap UI framework
- 
+
  1. npm install react-bootstrap bootstrap
  2. update App.js
+
+ #Create Product and Rating  Component
+ 1. Create Rating Component
+ 2. Create Product  Component
+ 3. Use Rating component in Product componenet
+ 
 
 
  
