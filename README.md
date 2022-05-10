@@ -18,4 +18,9 @@
  1. npm i create-react-app
  2. Create route for home screen
  3. Create Router for product screen
+
+ #Server Setup
+ 1.Install nodejs
+ 2.install express  and nodemon
+ 3.Run the project in 5000 port
  
