@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet-async';
-import { Navigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import Rating from '../component/Rating';
@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 };
 
 const ProductScreen = () => {
+	const navigate=useNavigate();
 	const params = useParams();
 	const { slug } = params;
 
@@ -64,7 +65,7 @@ const ProductScreen = () => {
 		ctxDispatch({type:"CART_ADD_ITEM",payload:{
 			...product,quantity,
 		}})
-		Navigate('/cart');
+		navigate('/cart');
 
 	}
 
