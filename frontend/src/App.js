@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import Badge from 'react-bootstrap/Badge';
 import {Store} from './Store';
 import CartScreen from './screens/CartScreen';
+import SignInScreen from './screens/SignInScreen';
 
 const App = () => {
 	const {state}=useContext(Store);
@@ -43,6 +44,7 @@ const App = () => {
 							/>
 							<Route path='/' element={<HomeScreen />} />
 							<Route path="/cart" element={<CartScreen/>} />
+							<Route path='/signin' element={<SignInScreen/>} />
 						</Routes>
 
 					</Container>

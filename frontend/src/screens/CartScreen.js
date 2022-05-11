@@ -11,7 +11,7 @@ import { Store } from '../Store';
 import axios from 'axios'
 
 const CartScreen = () => {
-	const navigate=useNavigate;
+	const navigate=useNavigate();
 	const { state, dispatch: ctxDispath } = useContext(Store);
 	const {
 		cart: { cartItems },
