@@ -14,7 +14,7 @@ const App = () => {
 					<Navbar bg='dark' variant='dark'>
 						<Container>
 							<LinkContainer to='/'>
-								<Navbar.Brand>Amazon</Navbar.Brand>
+								<Navbar.Brand>Amazona</Navbar.Brand>
 							</LinkContainer>
 						</Container>
 					</Navbar>

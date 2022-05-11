@@ -5,6 +5,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet-async';
 import logger from 'use-reducer-logger';
+import LoadingBox from '../component/LoadingBox';
+import MessageBox from '../component/MessageBox';
 import Product from '../component/Product';
 
 const reducer = (state, action) => {
@@ -22,7 +24,7 @@ const reducer = (state, action) => {
 
 const HomeScreen = () => {
 	// const [product, setProduct] = useState([]);
-	const [{ loading, products }, dispatch] = useReducer(logger(reducer), {
+	const [{ loading,error, products }, dispatch] = useReducer(logger(reducer), {
 		products: [],
 		loading: true,
 		error: '',
@@ -48,8 +50,9 @@ const HomeScreen = () => {
 			</Helmet>
 			<h1>Features Products</h1>
 			{loading ? (
-				<div>Loading....</div>
-			) : (
+			 <LoadingBox/>
+			) :error? 
+			<MessageBox variant="danger">{error}</MessageBox>: (
 				<div className='products'>
 					<Row>
 						{products.map((product) => (
