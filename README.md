@@ -66,5 +66,11 @@
 4. Implement add to cart button click handler
 
 
+#Create Cart Screen
+1. Create 2 colums
+2. Display items list
+3. Create action column
+
+
 
  

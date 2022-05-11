@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import Rating from '../component/Rating';
@@ -64,6 +64,7 @@ const ProductScreen = () => {
 		ctxDispatch({type:"CART_ADD_ITEM",payload:{
 			...product,quantity,
 		}})
+		Navigate('/cart');
 
 	}
 
