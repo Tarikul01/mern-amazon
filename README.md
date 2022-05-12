@@ -100,5 +100,11 @@
 5. Seed sample product
 
 
+#Seed sample users
+1. Create user model
+2. Seed sample users
+3. Create user routes
+
+
 
  
