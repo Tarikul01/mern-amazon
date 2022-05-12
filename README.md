@@ -87,5 +87,18 @@
 4. add signin button
 
 
+#MONGOODB connection
+
+1.  just connect to localhost mongodb  use mongocompas gui
+
+#Seed Sample Data
+
+1. Create product model
+2. create User model
+3. create seed route
+4. use route in server.js
+5. Seed sample product
+
+
 
  
