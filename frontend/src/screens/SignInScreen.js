@@ -6,6 +6,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {Store} from '../Store.js';
 import Axios from 'axios';
+import { toast } from 'react-toastify';
+import getError from '../component/utils.js';
 const SignInScreen = () => {
 	const navigate=useNavigate();
 	const { search } = useLocation();
@@ -26,7 +28,8 @@ const SignInScreen = () => {
 			localStorage.setItem('userInfo',JSON.stringify(data));
 			navigate(redirect || '/');
 		} catch (err) {
-			alert("Invalid email or Password ! ")
+			// toast.error(getError(err))
+			toast.error("Invalid Email or Password!");
 		}
 	};
 	return (

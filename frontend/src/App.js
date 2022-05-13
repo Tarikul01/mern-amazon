@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -13,16 +15,17 @@ import SignInScreen from './screens/SignInScreen';
 import { Store } from './Store';
 
 const App = () => {
-	const { state,dispatch:ctxDispatch } = useContext(Store);
+	const { state, dispatch: ctxDispatch } = useContext(Store);
 	const { cart, userInfo } = state;
-	const signOutHandler=()=>{
-		ctxDispatch({type:'USER_SIGNOUT'});
+	const signOutHandler = () => {
+		ctxDispatch({ type: 'USER_SIGNOUT' });
 		localStorage.removeItem('userInfor');
-
-	}
+	};
 	return (
 		<BrowserRouter>
 			<div className='d-flex flex-column site-container'>
+			
+			<ToastContainer position="bottom-center" limit={1}/>
 				<header>
 					<Navbar bg='dark' variant='dark'>
 						<Container>
@@ -55,8 +58,13 @@ const App = () => {
 												Order History
 											</NavDropdown.Item>
 										</LinkContainer>
-										<NavDropdown.Divider/>
-										<Link className='dropdown-item' to="#signout" onClick={signOutHandler}>Sign Out</Link>
+										<NavDropdown.Divider />
+										<Link
+											className='dropdown-item'
+											to='#signout'
+											onClick={signOutHandler}>
+											Sign Out
+										</Link>
 									</NavDropdown>
 								) : (
 									<Link className='nav-link' to='/signin'>
