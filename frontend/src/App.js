@@ -1,20 +1,25 @@
 import React, { useContext } from 'react';
+import Badge from 'react-bootstrap/Badge';
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
-import Nav from 'react-bootstrap/Nav';
-import { Link } from 'react-router-dom';
-import Badge from 'react-bootstrap/Badge';
-import {Store} from './Store';
-import CartScreen from './screens/CartScreen';
 import SignInScreen from './screens/SignInScreen';
+import { Store } from './Store';
 
 const App = () => {
-	const {state}=useContext(Store);
-	const {cart}=state;
+	const { state,dispatch:ctxDispatch } = useContext(Store);
+	const { cart, userInfo } = state;
+	const signOutHandler=()=>{
+		ctxDispatch({type:'USER_SIGNOUT'});
+		localStorage.removeItem('userInfor');
+
+	}
 	return (
 		<BrowserRouter>
 			<div className='d-flex flex-column site-container'>
@@ -24,13 +29,40 @@ const App = () => {
 							<LinkContainer to='/'>
 								<Navbar.Brand>Amazona</Navbar.Brand>
 							</LinkContainer>
-							<Nav className="me-auto">
-							<Link to="/cart" className="nav-link">
-							Cart 
-							{
-								cart.cartItems.length>0 &&(<Badge pill bg="danger">{cart.cartItems.reduce((a,c)=>a+c.quantity,0)}</Badge>)
-							}
-							</Link>
+							<Nav className='me-auto'>
+								<Link to='/cart' className='nav-link'>
+									Cart
+									{cart.cartItems.length > 0 && (
+										<Badge pill bg='danger'>
+											{cart.cartItems.reduce(
+												(a, c) => a + c.quantity,
+												0
+											)}
+										</Badge>
+									)}
+								</Link>
+								{userInfo ? (
+									<NavDropdown
+										title={userInfo.name}
+										id='basic-nav-dropdown'>
+										<LinkContainer to='/profile'>
+											<NavDropdown.Item>
+												User Profile
+											</NavDropdown.Item>
+										</LinkContainer>
+										<LinkContainer to='/orderhistory'>
+											<NavDropdown.Item>
+												Order History
+											</NavDropdown.Item>
+										</LinkContainer>
+										<NavDropdown.Divider/>
+										<Link className='dropdown-item' to="#signout" onClick={signOutHandler}>Sign Out</Link>
+									</NavDropdown>
+								) : (
+									<Link className='nav-link' to='/signin'>
+										SignIn
+									</Link>
+								)}
 							</Nav>
 						</Container>
 					</Navbar>
@@ -43,14 +75,15 @@ const App = () => {
 								element={<ProductScreen />}
 							/>
 							<Route path='/' element={<HomeScreen />} />
-							<Route path="/cart" element={<CartScreen/>} />
-							<Route path='/signin' element={<SignInScreen/>} />
+							<Route path='/cart' element={<CartScreen />} />
+							<Route path='/signin' element={<SignInScreen />} />
 						</Routes>
-
 					</Container>
 				</main>
 				<footer>
-				<div bg="dark" className="text-center">All Right Reserve</div>
+					<div bg='dark' className='text-center'>
+						All Right Reserve
+					</div>
 				</footer>
 			</div>
 		</BrowserRouter>
