@@ -12,7 +12,7 @@ const ShippingAddressScreen = () => {
 		cart: { shippingAddress },
     userInfo
 	} = state;
-	const { navigate } = useNavigate();
+	const navigate = useNavigate();
 	const [fullName, setFullName] = useState(shippingAddress.fullName ||'');
 	const [address, setAddress] = useState(shippingAddress.address||'');
 
