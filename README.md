@@ -127,6 +127,11 @@
  1. create input froms
  2. handle submit
  3. create backend api
+
+ Implement Select payment Method Screen
+
+ 1. Create input froms
+ 2. Handle submit
  
 
 
