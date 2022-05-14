@@ -138,6 +138,11 @@
  1. show cart items, payment and address
  2. handle palce order action
  3. create order create api
+
+
+ Implement Place order action
+ 1. handle place order action
+ 2. create orde create api
  
 
 
