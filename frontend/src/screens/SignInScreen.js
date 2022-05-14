@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -17,6 +17,7 @@ const SignInScreen = () => {
 	const [password, setPassword] = useState();
 
 	const {state,dispatch:ctxDispatch}=useContext(Store);
+	const {userInfo}=state;
 	const submitHandler = async (e) => {
 		e.preventDefault();
 		try {
@@ -29,9 +30,14 @@ const SignInScreen = () => {
 			navigate(redirect || '/');
 		} catch (err) {
 			// toast.error(getError(err))
-			toast.error("Invalid Email or Password!");
+			toast.error(getError(err));
 		}
 	};
+	useEffect(()=>{
+     if(userInfo){
+		 navigate(redirect);
+	 }
+	},[navigate,redirect,userInfo])
 	return (
 		<Container className='small-container'>
 			<Helmet>Sign In</Helmet>

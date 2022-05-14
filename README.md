@@ -117,5 +117,10 @@
 3. show user name in handler
 
 
+#Create Shipping Screen
+1. create from inputs
+2. handle even shipping address
+3. add checkout wizard bar
+
 
  
