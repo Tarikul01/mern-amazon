@@ -122,5 +122,12 @@
 2. handle even shipping address
 3. add checkout wizard bar
 
+#Create sign up Screen
+ 
+ 1. create input froms
+ 2. handle submit
+ 3. create backend api
+ 
+
 
  
