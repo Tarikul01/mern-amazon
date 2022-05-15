@@ -2,7 +2,7 @@ import jwt  from "jsonwebtoken"
 
 export const generateToken=(user)=>{
     return jwt.sign(user,process.env.JWT_SECRET,{
-        expiresIn:3600,
+        expiresIn:3600000,
     });
 }
 export const isAuth=(req,res,next)=>{
