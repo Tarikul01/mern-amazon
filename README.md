@@ -161,6 +161,11 @@
  8. implement on Approve paypal function
  9.  create pay order api in backend
  
+ # Display Order History
+ 1. Create order screen
+ 2. Create order history api
+ 3. use api in the frontend
+ 
 
 
  
