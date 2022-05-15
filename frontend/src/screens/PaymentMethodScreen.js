@@ -29,7 +29,7 @@ const PaymentMethodScreen = () => {
 	};
 	return (
 		<div>
-			<Helmet>Payment method</Helmet>
+			<Helmet><title>Payment method</title></Helmet>
 			<CheckoutSteps step1 step2 step3></CheckoutSteps>
 			<h1 className='my-3'>Payment Method</h1>
 			<Form onSubmit={submitHandler}>

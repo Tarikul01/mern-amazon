@@ -31,6 +31,11 @@ import { isAuth } from '../utils.js';
      res.status(201).send({message:'New order Created',order});
 
  }));
+ orderRouter.get('/mine',isAuth,async (req,res)=>{
+    const orders=await Order.find({user:req.user._id});
+    res.send(orders);
+
+})
  orderRouter.get('/:id',async(req,res)=>{
      const order= await Order.findById(req.params.id);
      if(order){
@@ -58,6 +63,8 @@ orderRouter.put('/:id/pay',isAuth,expressAsyncHandler(async(req,res)=>{
         res.status(404).send('Faild Result!');
     }
     
-}))
+}));
+
+
 
  export default orderRouter;
