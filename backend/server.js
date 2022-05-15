@@ -24,6 +24,10 @@ app.use(express.urlencoded({extended:true}));
 
 // Use all route 
 
+app.get('/api/keys/paypal',(req,res)=>{
+    res.send(process.env.PAYPAL_CLIENT_DI || 'sb');
+})
+
 app.use('/api/seed',seedRouter);
 
 app.use('/api/products',productRouter);
