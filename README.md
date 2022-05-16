@@ -172,6 +172,16 @@
   3. create user update api
   4. update user info
 
+#add sidebar and SearchBox
+1. add sidebar
+2. add search box
+
+#Last Section Create Search Screen
+1. show filters
+2. create api for searching products
+3. display result
+
+
 
 
  
