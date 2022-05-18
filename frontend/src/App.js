@@ -20,6 +20,7 @@ import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import SearchScreen from './screens/SearchScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignInScreen from './screens/SignInScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -48,7 +49,6 @@ const App = () => {
 		};
 		fetchCategory();
 	}, []);
-	console.log(categories);
 	return (
 		<BrowserRouter>
 			<div
@@ -176,6 +176,10 @@ const App = () => {
 							<Route
 								path='/profile'
 								element={<ProfileScreen />}
+							/>
+							<Route
+								path='/search'
+								element={<SearchScreen />}
 							/>
 						</Routes>
 					</Container>
